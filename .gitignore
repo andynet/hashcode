@@ -1,6 +1,7 @@
 #my
 *.zip
 python/build/
+cppy_load.cpp
 
 # Prerequisites
 *.d
