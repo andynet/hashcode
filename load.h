@@ -20,7 +20,7 @@ struct cache {
     std::vector<int> indexes;
 };
 
-struct input {
+struct google_input {
     int num_videos;
     int num_endpoints;
     int num_requests;
@@ -32,6 +32,6 @@ struct input {
     std::vector<int> videos_size;
 };
 
-input read_input();
+google_input read_input();
 
 

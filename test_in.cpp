@@ -18,7 +18,7 @@ class ComparePair
 
 typedef priority_queue<pair<int,double>,vector<pair<int,double>>,ComparePair> my_queue_pomery;
 
-input in;
+google_input in;
 
 
 

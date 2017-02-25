@@ -1,8 +1,8 @@
 #include "load.h"
 using namespace std;
 
-input read_input(){
-    input in;
+google_input read_input(){
+    google_input in;
     //prvy riadok
     cin >> in.num_videos;
     cin >> in.num_endpoints;
