@@ -2,7 +2,7 @@
 *.zip
 python/build/
 cppy_load.cpp
-
+python/__pycache__/
 # Prerequisites
 *.d
 
