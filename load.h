@@ -1,35 +1,38 @@
 #pragma once 
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 //co obsahuje endpoint
+/*
 struct request {
-    int video_id;
-    int count;
+    long video_id;
+    long count;
 
 };
-
+*/
 struct endpoint {
-    int l_data_c;
-    int connections;
-    std::vector<std::pair<int,int>> l_cache_s;
-    std::vector<request> requests;
+    long l_data_c;
+    long connections;
+    //std::vector<std::pair<int,int>> l_cache_s;
+    std::unordered_map<long,long> l_cache_s;
+    std::unordered_map<long,long> requests;
 };
-
+/*
 struct cache {
-    int memory;
-    std::vector<int> indexes;
+    long memory;
+    std::vector<long> indexes;
 };
-
+*/
 struct google_input {
-    int num_videos;
-    int num_endpoints;
-    int num_requests;
-    int num_caches;
-    int caches_size;
+    long num_videos;
+    long num_endpoints;
+    long num_requests;
+    long num_caches;
+    long caches_size;
 
-    std::vector<cache> caches;
+    //std::vector<cache> caches;
     std::vector<endpoint> endpoints;
-    std::vector<int> videos_size;
+    std::vector<long> videos_size;
 };
 
 google_input read_input();

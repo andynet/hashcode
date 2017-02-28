@@ -12,12 +12,13 @@ google_input read_input(){
     
     
 
-
+    /*
     for(int i =0;i < in.num_caches;i++){
         cache pom;
         pom.memory = 0;
         in.caches.push_back(pom);
     }
+    */
     //cout << "[*] cache nacitane" << endl;
     for(int i =0;i < in.num_videos;i++){
         int pom;
@@ -34,18 +35,19 @@ google_input read_input(){
             pair<int,int> pom2;
             cin >> pom2.first;
             cin >> pom2.second;
-            pom.l_cache_s.push_back(pom2);
+            //pom.l_cache_s.push_back(pom2);
+            pom.l_cache_s.insert(pom2);
         }
         in.endpoints.push_back(pom);
     }
     //cout << "[*] Endpoint nacitane" << endl;
     for(int i =0; i< in.num_requests;i++){
-       request pom;
-       cin >> pom.video_id;
+       std::pair<long,long> pom;
+       cin >> pom.first;
        int endpoint_id;
        cin >> endpoint_id;
-       cin >> pom.count;
-       in.endpoints[endpoint_id].requests.push_back(pom);
+       cin >> pom.second;
+       in.endpoints[endpoint_id].requests.insert(pom);
     }
     //cout << "[*] County nacitane" << endl;
 
