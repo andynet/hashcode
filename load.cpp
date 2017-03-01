@@ -47,7 +47,17 @@ google_input read_input(){
        int endpoint_id;
        cin >> endpoint_id;
        cin >> pom.second;
-       in.endpoints[endpoint_id].requests.insert(pom);
+
+       auto it = in.endpoints[endpoint_id].requests.find(pom.first);
+       if(it == in.endpoints[endpoint_id].requests.end()){
+            in.endpoints[endpoint_id].requests.insert(pom);
+       }
+       else {
+            //cout << endpoint_id << " :Uz tam je: " << pom.first << endl;
+            //uz tam je tak len pripocitam 
+            pom.second+=it->second;
+            in.endpoints[endpoint_id].requests.insert(pom);
+       }
     }
     //cout << "[*] County nacitane" << endl;
 

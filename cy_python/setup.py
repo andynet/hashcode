@@ -8,7 +8,8 @@ ext_modules = cythonize(Extension("cppy_load",
     sources= ["cppy_load.pyx","../load.cpp"],
     include_dirs=[np.get_include()],
     language="c++",
-    extra_compile_args=["-O3","--std=c++14"]
+    extra_compile_args=["-O3","--std=c++14","-ffast-math", "-march=native", "-fopenmp", "-mavx"],
+    extra_link_args=['-fopenmp']
     ))
 
 

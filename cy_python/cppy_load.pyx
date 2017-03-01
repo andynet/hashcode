@@ -17,11 +17,6 @@ def evaluate(endpoints,video_id,cache_id):
         #print(endpoint)
         if cache_id not in endpoint['l_cache_s']:
             continue
-        """
-        for request in endpoint['requests']:
-            if request['video_id']==video_id:
-                ret+=(endpoint['l_data_c']-endpoint['l_cache_s'][cache_id])*request['count']
-        """
         #lepsia verzia lebo cez to netreba iterovat
         if video_id in endpoint['requests']:
             ret+=(endpoint['l_data_c']-endpoint['l_cache_s'].at[cache_id])*endpoint['requests'].at[video_id]
@@ -38,7 +33,13 @@ def read_input():
     pom['videos_size'] = np.array(pom['videos_size'],dtype=np.int64)
     return pom
 
-
+def video_caches_values(endpoints,num_caches,video_id):
+    ret = pd.Series()
+    for cache_id in range(num_caches):
+        value = evaluate(endpoints,video_id,cache_id)
+        ret.at[cache_id] = value
+    ret.sort_values(ascending=False)
+    return (ret,np.asarray(ret.index))
 
 
 

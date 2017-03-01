@@ -1,7 +1,5 @@
-cimport numpy
 import numpy as np
 cimport numpy as np
-import cython
 from libcpp.vector cimport vector
 from libcpp.pair cimport pair
 from libcpp.unordered_map cimport unordered_map
